@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data android:name="flag" android:value="flag{WellD0ne!_th1s_1s_1st_fl4g}"/>
     </application>
 
 </manifest>
