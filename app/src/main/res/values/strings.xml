@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidQuiz</string>
+    <string name="false_text">you_already_know_how_to_find_flag</string>
 </resources>

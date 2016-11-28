@@ -5,7 +5,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-//#include "../../../../../../../Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/linux/in.h"
 
 std::string hoge(std::string s) {
     std::string ret = "";
@@ -25,16 +24,34 @@ std::string fuga(std::string s) {
 
 extern "C"
 jstring
-Java_totem_androidquiz_MainActivity_stringFromJNI(
+Java_totem_androidquiz_MainActivity_getPath(
         JNIEnv* env,
         jobject /* this */) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
+    std::string path = "iuuqr;..fhuitc/bnl.unudunudunudl.lhrb.s`v.l`ruds.dobsxqude/qof";
+    std::string str = "";
+    for(int i = 0; i < path.size(); i++) {
+        str += (path[i] ^ 0x01);
+    }
+    return env->NewStringUTF(str.c_str());
 }
 
 extern "C"
+jstring
+Java_totem_androidquiz_MainActivity_stringFromJNI(
+        JNIEnv* env,
+        jobject ) {
+    std::string hoge = "fmen{=i5z0jn!Vpi1r[8sVl0deag_oh5g|";
+    std::string str = "";
+    for(int i = 0; i < hoge.size(); i++) {
+        str += hoge[i] ^ i*i%16;
+    }
+    return env->NewStringUTF(str.c_str());
+}
+
+
+extern "C"
 void
-Java_totem_androidquiz_MainActivity_logWrite(JNIEnv* env, jobject) {
+Java_totem_androidquiz_MainActivity_logWrite(JNIEnv*, jobject) {
     std::string str = "gnbc~2pmz:fi,Q{x aL%fI$j}E}p)yb";
     __android_log_print(ANDROID_LOG_DEBUG, "flag",
                         "%s",
@@ -43,14 +60,10 @@ Java_totem_androidquiz_MainActivity_logWrite(JNIEnv* env, jobject) {
 
 extern "C"
 void
-Java_totem_androidquiz_MainActivity_sendPacket(JNIEnv * env, jobject) {
+Java_totem_androidquiz_MainActivity_sendPacket(JNIEnv *, jobject) {
     std::string str = "il`mxoso?|(m{d<ep!fu#`}yqt-ub";
     int sockfd;
     struct sockaddr_in server;
-
-    __android_log_print(ANDROID_LOG_DEBUG, "flag",
-                        "%s",
-                        fuga(str).c_str());
 
     if((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         __android_log_print(ANDROID_LOG_DEBUG, "socket", "could not get sockfd");
@@ -65,7 +78,6 @@ Java_totem_androidquiz_MainActivity_sendPacket(JNIEnv * env, jobject) {
     std::string decrypted =  fuga(str);
     for(int i = 0; i < decrypted.size(); i++) {
         sendto(sockfd, &decrypted[i], 1, MSG_DONTWAIT, (struct sockaddr *)&server, sizeof(server));
-        __android_log_print(ANDROID_LOG_DEBUG, "socket", "sending %c", decrypted[i]);
     }
 
     close(sockfd);
