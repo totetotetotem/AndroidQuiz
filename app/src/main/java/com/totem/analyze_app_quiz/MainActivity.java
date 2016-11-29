@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SharedPreferences prefs = getPreferences(MODE_WORLD_READABLE);
-                    boolean hoge = prefs.getBoolean("putFlag", false);
+                    SharedPreferences prefs = getPreferences(MODE_MULTI_PROCESS);
+                    Boolean hoge = prefs.getBoolean("putFlag", Boolean.FALSE);
                     if(hoge) {
                         TextView textView = (TextView) findViewById(R.id.flagText);
                         if(textView != null) {
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     protected void initPrefs() {
         SharedPreferences prefs = getPreferences(MODE_WORLD_WRITEABLE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putBoolean("putFlag", false);
+        editor.putBoolean("putFlag", Boolean.FALSE);
         editor.apply();
     }
 
