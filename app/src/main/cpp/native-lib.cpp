@@ -24,7 +24,7 @@ std::string fuga(std::string s) {
 
 extern "C"
 jstring
-Java_totem_androidquiz_MainActivity_getPath(
+Java_com_totem_analyze_1app_1quiz_MainActivity_getPath(
         JNIEnv* env,
         jobject /* this */) {
     std::string path = "iuuqr;..s`v/fhuitctrdsbnoudou/bnl.unudunudunudl.lhrb.l`ruds.dobsxqude/qof";
@@ -37,7 +37,7 @@ Java_totem_androidquiz_MainActivity_getPath(
 
 extern "C"
 jstring
-Java_totem_androidquiz_MainActivity_stringFromJNI(
+Java_com_totem_analyze_1app_1quiz_MainActivity_stringFromJNI(
         JNIEnv* env,
         jobject ) {
     std::string hoge = "fmen{=i5z0jn!Vpi1r[8sVl0deag_oh5g|";
@@ -51,7 +51,7 @@ Java_totem_androidquiz_MainActivity_stringFromJNI(
 
 extern "C"
 void
-Java_totem_androidquiz_MainActivity_logWrite(JNIEnv*, jobject) {
+Java_com_totem_analyze_1app_1quiz_MainActivity_logWrite(JNIEnv*, jobject) {
     std::string str = "gnbc~2pmz:fi,Q{x aL%fI$j}E}p)yb";
     __android_log_print(ANDROID_LOG_DEBUG, "flag",
                         "%s",
@@ -60,7 +60,7 @@ Java_totem_androidquiz_MainActivity_logWrite(JNIEnv*, jobject) {
 
 extern "C"
 void
-Java_totem_androidquiz_MainActivity_sendPacket(JNIEnv *, jobject) {
+Java_com_totem_analyze_1app_1quiz_MainActivity_sendPacket(JNIEnv *, jobject) {
     std::string str = "il`mxoso?|(m{d<ep!fu#`}yqt-ub";
     int sockfd;
     struct sockaddr_in server;
@@ -86,7 +86,7 @@ Java_totem_androidquiz_MainActivity_sendPacket(JNIEnv *, jobject) {
 
 extern "C"
 jstring
-Java_totem_androidquiz_MainActivity_cryptStr(JNIEnv * env, jobject, jstring s, jboolean b) {
+Java_com_totem_analyze_1app_1quiz_MainActivity_cryptStr(JNIEnv * env, jobject, jstring s, jboolean b) {
     std::string str = env->GetStringUTFChars(s, 0);
     if(b) {
         str += "True";

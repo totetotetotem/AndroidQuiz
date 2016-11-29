@@ -1,4 +1,4 @@
-package totem.androidquiz;
+package com.totem.analyze_app_quiz;
 
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -188,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        super.onPause();
         SharedPreferences sharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         for(int i = 0; i < 6; i++) {
@@ -208,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
             SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
             byte[] salt = new byte[32];
             random.nextBytes(salt);
-            return new String(salt);
+            return new String(Hex.encodeHex(salt));
         } catch (Exception e) {
             e.printStackTrace();
         }
