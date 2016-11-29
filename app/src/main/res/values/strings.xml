@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">AndroidQuiz</string>
     <string name="false_text">you_already_know_how_to_find_flag</string>
+    <string name="placeholder">input flag and touch button</string>
+    <string name="first">1st flag</string>
+    <string name="second">2nd flag</string>
+    <string name="third">3rd flag</string>
+    <string name="forth">4th flag</string>
+    <string name="fifth">5th flag</string>
+    <string name="sixth">hidden flag</string>
+    <string name="description">droid-kun</string>
 </resources>

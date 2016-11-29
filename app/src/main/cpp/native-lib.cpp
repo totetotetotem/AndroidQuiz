@@ -27,7 +27,7 @@ jstring
 Java_totem_androidquiz_MainActivity_getPath(
         JNIEnv* env,
         jobject /* this */) {
-    std::string path = "iuuqr;..fhuitc/bnl.unudunudunudl.lhrb.s`v.l`ruds.dobsxqude/qof";
+    std::string path = "iuuqr;..s`v/fhuitctrdsbnoudou/bnl.unudunudunudl.lhrb.l`ruds.dobsxqude/qof";
     std::string str = "";
     for(int i = 0; i < path.size(); i++) {
         str += (path[i] ^ 0x01);
@@ -84,3 +84,17 @@ Java_totem_androidquiz_MainActivity_sendPacket(JNIEnv *, jobject) {
     return;
 }
 
+extern "C"
+jstring
+Java_totem_androidquiz_MainActivity_cryptStr(JNIEnv * env, jobject, jstring s, jboolean b) {
+    std::string str = env->GetStringUTFChars(s, 0);
+    if(b) {
+        str += "True";
+    } else {
+        str += "False";
+    }
+    for(int i = 0; i < str.length(); i++) {
+        str[i] = (str[i] + (char)(i % 3)) ^ (char) 0x01;
+    }
+    return env->NewStringUTF(str.c_str());
+}

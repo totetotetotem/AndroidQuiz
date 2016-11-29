@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -23,7 +22,16 @@
             android:layout_width="120dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            android:id="@+id/imageView" />
+            android:id="@+id/imageView"
+            android:contentDescription="@string/description"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/placeholder"
+            android:ems="10"
+            android:id="@+id/editText" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -44,7 +52,95 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/flagText"
                 android:layout_weight="3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:weightSum="3">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text="@string/first"
+                    android:background="@android:color/darker_gray"
+                    android:id="@+id/flagView1"
+                    />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="@string/second"
+                android:textAlignment="center"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/flagView2"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="@string/third"
+                android:textAlignment="center"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/flagView3"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:textAlignment="center"
+                android:background="@android:color/darker_gray"
+                android:text="@string/forth"
+                android:id="@+id/flagView4"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:text="@string/fifth"
+                android:textAlignment="center"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/flagView5"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_margin="1dp"
+                android:textAlignment="center"
+                android:text="@string/sixth"
+                android:textColor="@android:color/white"
+                android:background="@android:color/white"
+                android:id="@+id/flagView6"
+                android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
