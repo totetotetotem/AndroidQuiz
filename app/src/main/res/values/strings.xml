@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Analyze App Quiz</string>
+    <string name="app_name">Analyze Quiz</string>
     <string name="false_text">you_already_know_how_to_find_flag</string>
     <string name="placeholder">input flag and touch button</string>
     <string name="first">1st flag</string>
