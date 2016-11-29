@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         clearFlag[matched] = Boolean.TRUE;
                         Toast.makeText(this, "Congratulation!", Toast.LENGTH_SHORT).show();
                     }
+                    editText.getEditableText().clear();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
