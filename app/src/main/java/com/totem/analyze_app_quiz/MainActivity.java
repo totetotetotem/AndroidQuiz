@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         textView.setBackgroundColor(Color.YELLOW);
                         textView.setTextColor(Color.BLACK);
                     }
+                    clearFlag[i] = Boolean.TRUE;
                 }
             } catch (Exception e) {
                 e.printStackTrace();

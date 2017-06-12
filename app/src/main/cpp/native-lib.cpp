@@ -27,7 +27,7 @@ jstring
 Java_com_totem_analyze_1app_1quiz_MainActivity_getPath(
         JNIEnv* env,
         jobject /* this */) {
-    std::string path = "iuuqr;..s`v/fhuitctrdsbnoudou/bnl.unudunudunudl.lhrb.l`ruds.dobsxqude/qof";
+    std::string path = "iuuq;..mhfiu/enutq/nsf.tqmne`.mhfiu/enutq/nsf289777/qof";
     std::string str = "";
     for(int i = 0; i < path.size(); i++) {
         str += (path[i] ^ 0x01);
